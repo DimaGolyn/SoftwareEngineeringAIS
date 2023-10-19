@@ -59,3 +59,4 @@
 ![Меню](https://github.com/DimaGolyn/SoftwareEngineeringAIS/blob/Тема_3/pic/5.jpg)
 ## Выводы
 Я поработал над составлением кода из готовых кусков
+![Меню](http://i01.fotocdn.net/s123/eddd195c9b98f069/public_pin_l/2805132434.jpg)
