@@ -54,5 +54,6 @@
 ![Меню](https://github.com/DimaGolyn/SoftwareEngineeringAIS/blob/Тема_4/pic/5.1.jpg)
 ## Выводы
 Я поработал с args, потренировался в циклах, научился применять библиотеку random, а также я узнал про kwargs, datetime и точку входа.
+
 ![Меню](https://github.com/DimaGolyn/SoftwareEngineeringAIS/blob/Тема_4/pic/6.jpg)
 ### Результат.
