@@ -1,15 +1,6 @@
-import random
-def Dice():
-    x = random.randint(1, 6)
-    print(x)
-    if x == 5 or x == 6:
-        print('Вы победили!')
-    elif x == 3 or x == 4:
-        Dice()
-    elif x == 1 or x == 2:
-        print('Вы проиграли!')
-    else:
-        print('Введены неверные числа')
-
-if __name__ == '__main__':
-    Dice()
+report1 = [10.2, 14.8, 19.3, 22.7, 12.5, 33.1, 38.9, 21.6, 26.4, 17.1, 30.2, 35.7, 16.9,
+27.8, 24.5, 16.3, 18.7, 31.9, 12.9, 37.4]
+report = sorted(report1)
+print(f"Три лучших результата: {report[0:3]} \n"
+      f"Три худших результата: {report[len(report)-3:len(report)]} \n"
+      f"Все результаты с 10: {report1[9:len(report1)]}")
