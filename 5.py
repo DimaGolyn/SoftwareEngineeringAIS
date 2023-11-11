@@ -1,22 +1,14 @@
-import copy
+def tuple_remove(my_tuple):
+    for i in range(len(my_tuple)):
+        if i in my_tuple:
+            my_tuple.remove(i)
+    result_tuple = tuple(my_tuple)
+    print(result_tuple)
 
-list_1 = [1, 1, 3, 3, 1]
-list_2 = [5, 5, 5, 5, 5, 5, 5]
-list_3 = [2, 2, 1, 2, 2, 5, 6, 7, 1, 3, 2, 2]
-def correction(a):
-    copy_a = copy.deepcopy(a)
-    main_list = [*set(a)] #Массив с одним вхождением
-    for x in main_list:  # Убираем первое вхождение в основном массиве
-        if x in a:
-            a.remove(x)
-    main_list = [*set(copy_a)]
-    for x in a: #Пробегается по элементам Основного
-        b = x
-        while b in main_list:
-            b = str(b) + str(x)
-        main_list.append(b)
-    print(set(main_list))
-
-correction(list_1)
-correction(list_2)
-correction(list_3)
+if __name__ == "__main__":
+    x = input("Входные данные: ")
+    input_list = []
+    for k in x:
+        if k.isdigit():
+            input_list.append(int(k))
+    tuple_remove(input_list)

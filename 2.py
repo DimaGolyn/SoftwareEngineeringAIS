@@ -1,6 +1,15 @@
-report1 = [10.2, 14.8, 19.3, 22.7, 12.5, 33.1, 38.9, 21.6, 26.4, 17.1, 30.2, 35.7, 16.9,
-27.8, 24.5, 16.3, 18.7, 31.9, 12.9, 37.4]
-report = sorted(report1)
-print(f"Три лучших результата: {report[0:3]} \n"
-      f"Три худших результата: {report[len(report)-3:len(report)]} \n"
-      f"Все результаты с 10: {report1[9:len(report1)]}")
+def tuple_remove(my_tuple, ch):
+    if ch in my_tuple:
+        my_tuple.remove(ch)
+    result_tuple = tuple(my_tuple)
+    print(result_tuple)
+
+if __name__ == "__main__":
+    x = input("Входные данные: ")
+    input_list = []
+    for k in x:
+        if k.isdigit():
+            input_list.append(int(k))
+    ch = input_list[len(input_list)-1]
+    input_list.pop()
+    tuple_remove(input_list, ch)

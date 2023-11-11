@@ -1,12 +1,19 @@
-one = [2, 3, 4, 5, 3, 4, 5, 2, 2, 5, 3, 4, 3, 5, 4]
-two = [4, 2, 3, 5, 3, 5, 4, 2, 2, 5, 4, 3, 5, 3, 4]
-three = [5, 4, 3, 3, 4, 3, 3, 5, 5, 3, 3, 3, 3, 4, 4]
+def tuple_remove(my_tuple, ch):
+    if my_tuple.count(ch)>=2:
+        my_tuple = my_tuple[my_tuple.index(ch):my_tuple.index(ch, 2)+1]
+        print(tuple(my_tuple))
+    elif ch in my_tuple:
+        my_tuple = my_tuple[my_tuple.index(ch):len(my_tuple)]
+        print(tuple(my_tuple))
+    else:
+        print(tuple())
 
-def correction(a):
-    a = [x for x in a if x != 2]
-    a = [4 if x == 3 else x for x in a]
-    print(a)
-
-correction(one)
-correction(two)
-correction(three)
+if __name__ == "__main__":
+    x = input("Входные данные: ")
+    input_list = []
+    for k in x:
+        if k.isdigit():
+            input_list.append(int(k))
+    ch = input_list[len(input_list)-1]
+    input_list.pop()
+    tuple_remove(input_list, ch)
