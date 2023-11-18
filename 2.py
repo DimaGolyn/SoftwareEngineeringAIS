@@ -1,15 +1,17 @@
-def tuple_remove(my_tuple, ch):
-    if ch in my_tuple:
-        my_tuple.remove(ch)
-    result_tuple = tuple(my_tuple)
-    print(result_tuple)
+transport = int(input("Введите затраты на проезд: "))
+food = int(input("Введите затраты на питание: "))
+house = int(input("Введите затраты на квартиру: "))
+total = transport + food + house
 
-if __name__ == "__main__":
-    x = input("Входные данные: ")
-    input_list = []
-    for k in x:
-        if k.isdigit():
-            input_list.append(int(k))
-    ch = input_list[len(input_list)-1]
-    input_list.pop()
-    tuple_remove(input_list, ch)
+with open("ras.txt", "w") as file:
+    file.write(f"Итого:\n"
+      f"Метро: {transport} р.\n"
+      f"Еда: {food} р.\n"
+      f"Квартира: {house} р.\n"
+      f"Всего: {total} р.")
+
+print(f"Итого:\n"
+      f"Метро: {transport} р.\n"
+      f"Еда: {food} р.\n"
+      f"Квартира: {house} р.\n"
+      f"Всего: {total} р.")

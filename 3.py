@@ -1,10 +1,24 @@
-line = input("Введите последовательность чисел: ")
-while len(line)<=15:
-    print("нужно минимум 15 символов.")
-    line = input("Введите последовательность чисел: ")
-def top_3_numbers(line):
-    line = list(map(int, line))
-    my_dict = {x: line.count(x) for x in range(10)}
-    print(my_dict)
+import re
+with open("eng.txt", "w") as file:
+    file.write(f"Beautiful is better than ugly. \n"
+      f"Explicit is better than implicit. \n"
+      f"Simple is better than complex. \n"
+      f"Complex is better than complicated.")
 
-top_3_numbers(line)
+with open("eng.txt", "r") as file:
+    lines = len(file.readlines())
+
+with open("eng.txt", "r") as file:
+    content1 = file.read().replace('\n', '')
+    words = len(re.sub(r'[^\w\s]', '', content1).split(" "))
+
+with open("eng.txt", "r") as file:
+    content2 = file.read().replace('\n', '')
+    content2 = content2.replace(' ', '')
+    letters = re.sub(r'[^\w\s]', '', content2)
+    letters = len(list(letters))
+
+print(f"Input file contains:\n"
+      f"{letters} letters\n"
+      f"{words} words\n"
+      f"{lines} lines")

@@ -1,14 +1,12 @@
-def tuple_remove(my_tuple):
-    for i in range(len(my_tuple)):
-        if i in my_tuple:
-            my_tuple.remove(i)
-    result_tuple = tuple(my_tuple)
-    print(result_tuple)
+def find_and_replace_word(filename, target_word, replacement_word):
+    try:
+        with open(filename, 'r', encoding='utf-8') as file:
+            text = file.read()
+            modified_text = text.replace(target_word, replacement_word)
+        with open(filename, 'w', encoding='utf-8') as file:
+            file.write(modified_text)
+        print(f"The word '{target_word}' has been replaced with '{replacement_word}' in the file.")
+    except FileNotFoundError:
+        print("File not found.")
 
-if __name__ == "__main__":
-    x = input("Входные данные: ")
-    input_list = []
-    for k in x:
-        if k.isdigit():
-            input_list.append(int(k))
-    tuple_remove(input_list)
+find_and_replace_word('input.txt', 'Hello', 'Glad to see you')
