@@ -1,24 +1,28 @@
-import re
-with open("eng.txt", "w") as file:
-    file.write(f"Beautiful is better than ugly. \n"
-      f"Explicit is better than implicit. \n"
-      f"Simple is better than complex. \n"
-      f"Complex is better than complicated.")
+class Pelmeni:
+    def __init__(self, name, brand, vkus, price):
+        self.name = name
+        self.brand = brand
+        self.vkus = vkus
+        self.price = price
 
-with open("eng.txt", "r") as file:
-    lines = len(file.readlines())
+    def WhatIsPelmeni(self):
+        print(f"Это {self.name} да ещё и {self.brand}! О ДА!")
 
-with open("eng.txt", "r") as file:
-    content1 = file.read().replace('\n', '')
-    words = len(re.sub(r'[^\w\s]', '', content1).split(" "))
+    def Info(self):
+        print(f"А внутри у них {self.vkus}, а стоимость то {self.price} вообще супер, дайте 2 пачки!!!")
 
-with open("eng.txt", "r") as file:
-    content2 = file.read().replace('\n', '')
-    content2 = content2.replace(' ', '')
-    letters = re.sub(r'[^\w\s]', '', content2)
-    letters = len(list(letters))
 
-print(f"Input file contains:\n"
-      f"{letters} letters\n"
-      f"{words} words\n"
-      f"{lines} lines")
+class OldPelmeni(Pelmeni):
+    def __init__(self, name, brand, vkus, price, razmer):
+        super().__init__(name, brand, vkus, price)
+        self.razmer = razmer
+    def whatRazmer(self):
+        print(self.razmer)
+
+myPelmeni = Pelmeni("Пельмени", "Ревтенские", "свинина", "100 рублей")
+myPelmeni.WhatIsPelmeni()
+myPelmeni.Info()
+
+myOldPelmeni = OldPelmeni("Другие Пельмени", "Уральские", "c курицей", "69 рублей", "Немного меньше по размеру")
+myOldPelmeni.WhatIsPelmeni()
+myOldPelmeni.whatRazmer()

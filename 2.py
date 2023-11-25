@@ -1,17 +1,15 @@
-transport = int(input("Введите затраты на проезд: "))
-food = int(input("Введите затраты на питание: "))
-house = int(input("Введите затраты на квартиру: "))
-total = transport + food + house
+class Pelmeni:
+    def __init__(self, name, brand, vkus, price):
+        self.name = name
+        self.brand = brand
+        self.vkus = vkus
+        self.price = price
+    def WhatIsPelmeni(self):
+        print(f"Это {self.name} да ещё и {self.brand}! О ДА!")
 
-with open("ras.txt", "w") as file:
-    file.write(f"Итого:\n"
-      f"Метро: {transport} р.\n"
-      f"Еда: {food} р.\n"
-      f"Квартира: {house} р.\n"
-      f"Всего: {total} р.")
+    def Info(self):
+        print(f"А внутри у них {self.vkus}, а стоимость то {self.price} вообще супер, дайте 2 пачки!!!")
 
-print(f"Итого:\n"
-      f"Метро: {transport} р.\n"
-      f"Еда: {food} р.\n"
-      f"Квартира: {house} р.\n"
-      f"Всего: {total} р.")
+myPelmeni = Pelmeni("Пельмени", "Ревтенские", "свинина", "100 рублей")
+myPelmeni.WhatIsPelmeni()
+myPelmeni.Info()

@@ -1,12 +1,26 @@
-def find_and_replace_word(filename, target_word, replacement_word):
-    try:
-        with open(filename, 'r', encoding='utf-8') as file:
-            text = file.read()
-            modified_text = text.replace(target_word, replacement_word)
-        with open(filename, 'w', encoding='utf-8') as file:
-            file.write(modified_text)
-        print(f"The word '{target_word}' has been replaced with '{replacement_word}' in the file.")
-    except FileNotFoundError:
-        print("File not found.")
+class Pelmeni:
+    def __init__(self, name, brand, vkus, price):
+        self.name = name
+        self.brand = brand
+        self.vkus = vkus
+        self.price = price
 
-find_and_replace_word('input.txt', 'Hello', 'Glad to see you')
+    def Vkus(self):
+        pass
+class OldPelmeni(Pelmeni):
+    def __init__(self, name, brand, vkus, price, razmer):
+        super().__init__(name, brand, vkus, price)
+        self.razmer = razmer
+    def Vkus(self):
+        print(f"{self.brand}! их {self.vkus} станет не такой вкусной чрезе недели 3, а про их стоимость можно и не говорить.")
+class NewPelmeni(Pelmeni):
+    def __init__(self, name, brand, vkus, price):
+        super().__init__(name, brand, vkus, price)
+    def Vkus(self):
+        print(f"{self.brand}! их {self.vkus} станет не очень через 2 недели, а стоимость примерно {self.price}")
+
+myPelmeni = NewPelmeni("Пельмени", "Бульмени", "Бульон", "125")
+myOldPelmeni = OldPelmeni("Пельмени","Уральские", "курица", "69", "маленькие")
+
+myPelmeni.Vkus()
+myOldPelmeni.Vkus()
