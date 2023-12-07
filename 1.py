@@ -1,22 +1,7 @@
-import time
+def fib(n):
+    a, b = 1, 1
+    for i in range(n):
+        yield a
+        a, b = b, a + b
 
-def timing_decorator(func):
-    def wrapper(*args, **kwargs):
-        start_time = time.time()
-        result = func(*args, **kwargs)
-        end_time = time.time()
-        execution_time = end_time - start_time
-        print(f"Функция {func.__name__} выполнилась за {execution_time:.6f} секунд")
-        return result
-    return wrapper
-
-
-@timing_decorator
-def fibonacci():
-    fib1 = fib2 = 1
-    for i in range(2, 200):
-        fib1, fib2 = fib2, fib1 + fib2
-        print(fib2, end='')
-
-if __name__ == '__main__':
-    fibonacci()
+print(list(fib(200))[199])

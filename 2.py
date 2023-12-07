@@ -1,17 +1,8 @@
-try:
-
-    with open("empty_file.txt", "r") as file:
-        content = file.read()
-
-        if not content:
-            raise Exception("Файл пустой")
-
-        print("Содержимое файла:")
-        print(content)
-
-except FileNotFoundError:
-    print("Файл не найден")
-
-except Exception as e:
-    print(f"Исключение: {e}")
-    print("Файл пустой")
+def fibonacci(n):
+    a, b = 1, 1
+    with open('fibonacci.txt', 'w') as file:
+         for _ in range(n):
+             file.write(str(a) + '\n')
+             a, b = b, a + b
+             yield a
+print(list(fibonacci(200))[199])
